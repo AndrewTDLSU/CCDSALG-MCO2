@@ -53,7 +53,7 @@ public class Main {
             return;
         }
         
-        // Find connection using BFS (using the provided approach)
+        // Find connection using BFS
         List<Integer> path = findConnectionBFS(person1, person2, graph.getAdjacencyList());
         
         if (path.isEmpty()) {
@@ -64,7 +64,7 @@ public class Main {
         }
     }
 
-    // BFS for finding path between two nodes (adapted from your approach)
+    // BFS for finding path between two nodes
     public static List<Integer> findConnectionBFS(int start, int target, List<List<Integer>> adj) {
         int V = adj.size();
         boolean[] visited = new boolean[V];
@@ -117,7 +117,7 @@ public class Main {
         }
     }
 
-    // BFS for all components (handles disconnected graphs) 
+    // BFS for all components (handles disconnected graphs)
     public static List<Integer> bfsAllComponents(List<List<Integer>> adj) {
         int V = adj.size();
         boolean[] visited = new boolean[V];
