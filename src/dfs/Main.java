@@ -132,34 +132,6 @@ public class Main {
         return res;
     }*/
 
-    // Additional utility method: Find all accounts reachable from a given account
-    public static void findReachableAccounts(Scanner sc, SocialNetworkGraph graph) {
-        System.out.print("Enter ID of person to find all reachable accounts: ");
-        int personId = sc.nextInt();
-        
-        if (personId < 0 || personId >= graph.getNumAccounts()) {
-            System.out.println("Error: Person ID " + personId + " does not exist!");
-            return;
-        }
-        
-        List<List<Integer>> adj = graph.getAdjacencyList();
-        boolean[] visited = new boolean[adj.size()];
-        List<Integer> reachable = new ArrayList<>();
-        
-        bfsConnected(adj, personId, visited, reachable);
-        
-        System.out.println("\nFrom person " + personId + ", you can reach " + 
-                          (reachable.size() - 1) + " other accounts!");
-        System.out.print("Reachable accounts: ");
-        for (int i = 1; i < reachable.size(); i++) { // Skip the starting person
-            System.out.print(reachable.get(i));
-            if (i < reachable.size() - 1) {
-                System.out.print(" ");
-            }
-        }
-        System.out.println();
-    }
-
     public static List<Integer> reconstructPath(int[] parent, int start, int target) {
         List<Integer> path = new ArrayList<>();
         
@@ -219,8 +191,7 @@ public class Main {
                 System.out.println("\nMAIN MENU");
                 System.out.println("[1] Get friend list");
                 System.out.println("[2] Get connection");
-                System.out.println("[3] Find all reachable accounts");
-                System.out.println("[4] Exit");
+                System.out.println("[3] Exit");
 
                 System.out.print("\nEnter your choice: ");
                 int choice = sc.nextInt();
@@ -233,9 +204,6 @@ public class Main {
                         getConnection(sc, graph);
                         break;
                     case 3:
-                        findReachableAccounts(sc, graph);
-                        break;
-                    case 4:
                         fileChosen = false;
                         running = false;
                         System.out.println("\nGoodbye!");
@@ -247,4 +215,5 @@ public class Main {
         }
         sc.close();
     }
+
 }
