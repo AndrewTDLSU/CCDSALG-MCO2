@@ -211,19 +211,19 @@ public class Main {
         String filename = null;
         switch (choice) {
             case 1:
-                filename = "../Caltech36.txt";
+                filename = "Caltech36.txt";
                 break;
             case 2:
-                filename = "../Harvard1.txt";
+                filename = "Harvard1.txt";
                 break;
             case 3:
-                filename = "../Rice31.txt";
+                filename = "Rice31.txt";
                 break;
             case 4:
-                filename = "../Stanford3.txt";
+                filename = "Stanford3.txt";
                 break;
             case 5:
-                filename = "../Trinity100.txt";
+                filename = "Trinity100.txt";
                 break;
             default:
                 System.out.println(filename + "not found!");
