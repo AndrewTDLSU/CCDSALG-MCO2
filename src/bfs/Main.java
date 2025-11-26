@@ -203,32 +203,8 @@ public class Main {
      * 
      */
     public static SocialNetworkGraph loadGraph(Scanner sc) {
-        System.out.println("Select a file: ");
-        System.out.println("[1] Caltech36\n[2] Harvard1.txt\n[3] Rice31\n[4] Stanford3\n[5] Trinity100");
-        System.out.print("Enter your choice: ");
-        int choice = sc.nextInt();
-
-        String filename = null;
-        switch (choice) {
-            case 1:
-                filename = "Caltech36.txt";
-                break;
-            case 2:
-                filename = "Harvard1.txt";
-                break;
-            case 3:
-                filename = "Rice31.txt";
-                break;
-            case 4:
-                filename = "Stanford3.txt";
-                break;
-            case 5:
-                filename = "Trinity100.txt";
-                break;
-            default:
-                System.out.println(filename + "not found!");
-                break;
-        }
+        System.out.print("Input file name: ");
+        String filename = sc.nextLine().trim() + ".txt";
 
         // Use try-catch to avoid prematurely terminating the program
         try {
