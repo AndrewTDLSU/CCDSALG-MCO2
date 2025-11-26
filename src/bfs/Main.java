@@ -205,6 +205,7 @@ public class Main {
     public static SocialNetworkGraph loadGraph(Scanner sc) {
         System.out.println("Select a file: ");
         System.out.println("[1] Caltech36\n[2] Harvard1.txt\n[3] Rice31\n[4] Stanford3\n[5] Trinity100");
+        System.out.print("Enter your choice: ");
         int choice = sc.nextInt();
 
         String filename = null;
