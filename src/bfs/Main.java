@@ -203,8 +203,8 @@ public class Main {
      * 
      */
     public static SocialNetworkGraph loadGraph(Scanner sc) {
-        System.out.print("Input file name: ");
-        String filename = sc.nextLine().trim() + ".txt";
+        System.out.print("Input file location: ");
+        String filename = sc.nextLine().trim();
 
         // Use try-catch to avoid prematurely terminating the program
         try {
